@@ -1,0 +1,55 @@
+body {
+    background: #040000;
+}
+
+#editorContainer{
+    background: #FEF4DB;
+    width: 90%;
+    min-height: 0vw;
+    margin: 0 auto;
+    padding: 0 1rem;
+    border:none;
+    border-radius: 1em;
+    box-shadow: 0px 3px 10px 2px#F8A86A;
+}
+
+
+#editor {
+    border: none;
+}
+
+#editorContainer input{
+    border:none;
+    outline: none;
+    background: transparent;
+    
+}
+
+#editorContainer input#title{
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+    padding: 15px 0px 10px 0;
+    border-bottom: solid 2px #0000006f;
+    font-size: medium;
+    font-weight: bold;
+    color: #000000a1;
+}
+
+#editorContainer .author{
+    font-family: sans-serif;
+    display: flex;
+    justify-content: right;
+    font-size: small;
+    padding: 10px;
+    color: #000000a1;
+}
+
+#editorContainer .author input {
+    min-width: 150px;
+    padding-left: 10px;
+    padding-bottom: 0;
+    font-size: small;
+    color: #000000a1;
+}
