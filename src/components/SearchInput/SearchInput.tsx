@@ -4,7 +4,7 @@ import { IconButton, InputBase } from "@mui/material";
 export default function SearchInput({
   onChange = () => {},
 }: {
-  onChange: any;
+  onChange: () => void;
 }) {
   const onEnter = (e: React.KeyboardEvent<HTMLElement>) => {
     if (e.key === "Enter") onChange();

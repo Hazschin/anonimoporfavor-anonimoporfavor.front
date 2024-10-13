@@ -58,8 +58,8 @@ export default function GetPages({ params }: { params: ParamsPages }) {
 
   const [qNotes, setQNotes] = useState<number>(10);
   const [notes, setNotes] = useState<NoteOverviewType[]>([]);
-  const [page, setPage] = useState<number>(parseInt(params.page));
-  const [postPerPage, setPostPerPage] = useState<number>(6);
+  const [page /*, setPage*/] = useState<number>(parseInt(params.page));
+  const [postPerPage /*, setPostPerPage*/] = useState<number>(6);
 
   return (
     <div>

@@ -8,7 +8,7 @@ import { ParamsNote } from "../../../../types/Params";
 import { Notes } from "../../../../types/Notes";
 import { fetchPostData } from "../../../../utils/fetching";
 
-export default function getPages({ params }: { params: ParamsNote }) {
+export default function GetNote({ params }: { params: ParamsNote }) {
   console.log(params.note);
   useEffect(() => {
     fetchPostData<Notes>(`/notes/getNote`, {

@@ -1,5 +1,10 @@
 "use client";
+
+import { useEffect } from "react";
+
 export default function RootPage() {
-  window.location.href = "/1";
-  return <div>Hello</div>;
+  useEffect(() => {
+    window.location.href = "./1";
+  });
+  return <div>Hello World</div>;
 }

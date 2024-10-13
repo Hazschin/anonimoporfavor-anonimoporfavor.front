@@ -7,8 +7,8 @@ export default function SaveButton() {
   const [open, setOpen] = useState(false);
 
   const getText = () => {
-    let titleInput = document?.querySelector("#title") as HTMLInputElement;
-    let authorInput = document?.querySelector("#author") as HTMLInputElement;
+    const titleInput = document?.querySelector("#title") as HTMLInputElement;
+    const authorInput = document?.querySelector("#author") as HTMLInputElement;
 
     const note =
       document?.querySelector("#editor")?.firstElementChild?.innerHTML;
