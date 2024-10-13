@@ -1,12 +1,14 @@
 "use client";
 
 import React from "react";
-import TextEditor from "@/components/TextEditor/TextEditor";
+import Editor from "@/components/TextEditor/Editor";
+import SaveButton from "@/components/SaveButton/SaveButton";
 
 export default function CreateNote() {
   return (
     <>
-      <TextEditor />
+      <Editor />
+      <SaveButton />
     </>
   );
 }
