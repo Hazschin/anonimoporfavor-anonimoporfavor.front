@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import "./note.css";
 import Note from "@/components/Note/Note";
 import { useEffect, useState } from "react";
 import { ParamsNote } from "../../../../types/Params";

@@ -35,6 +35,7 @@ export default function Editor() {
 
   return (
     <>
+      <div id="bgHeaderEditor"></div>
       <div id="toolbar-container">
         <CustomToolbar />
       </div>

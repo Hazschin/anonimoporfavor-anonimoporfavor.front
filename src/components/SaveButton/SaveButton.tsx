@@ -20,7 +20,7 @@ export default function SaveButton() {
       .then(() => {
         console.log("Tu nota se ha guardado correctamente");
         handleClose();
-        //window.location.href = "/1";
+        window.location.href = "/1";
       })
       .catch(() => {
         alert("Ha habido un problema al guardar tu nota");

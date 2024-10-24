@@ -1,12 +1,10 @@
 "use client";
 
-import {
-  createTheme,
-  CssBaseline,
-  ThemeProvider,
-  Typography,
-} from "@mui/material";
+import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 import "./layoutApp.css";
+import logo from "../public/anonimoporfavor.png";
+import Image from "next/image";
+import Head from "next/head";
 
 export default function RootLayout({
   children,
@@ -25,19 +23,20 @@ export default function RootLayout({
 
   return (
     <html lang="es">
-      <head>
+      <Head>
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
         />
-      </head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <body>
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <header>
-            <Typography variant="h6" textAlign={"center"}>
-              <a href={"/1"}>Anónimo por favor</a>
-            </Typography>
+            <a href="/1">
+              <Image src={logo} alt="logo" height={50}></Image>
+            </a>
           </header>
 
           {children}
