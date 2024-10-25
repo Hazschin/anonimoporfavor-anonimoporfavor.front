@@ -5,7 +5,6 @@ import "./layoutApp.css";
 import logo from "../public/anonimoporfavor.png";
 import Image from "next/image";
 import Head from "next/head";
-//Comment
 export default function RootLayout({
   children,
 }: Readonly<{

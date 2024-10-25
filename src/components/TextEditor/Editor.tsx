@@ -5,15 +5,12 @@ import CustomToolbar from "./CustomToolbar";
 
 const QuillNoSSRWrapper = dynamic(() => import("react-quill"), {
   ssr: false,
-  loading: () => <p>cargando ...</p>,
+  loading: () => <p>Cargando...</p>,
 });
 
 export default function Editor() {
   const modules = {
     toolbar: { container: "#toolbar" },
-    clipboard: {
-      matchVisual: false,
-    },
   };
 
   const formats = [
