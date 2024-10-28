@@ -1,10 +1,13 @@
 import { ParsedUrlQuery } from "querystring";
 
 export interface ParamsNote extends ParsedUrlQuery {
-    note: string;
+  note: string;
 }
 
 export interface ParamsPages extends ParsedUrlQuery {
-    page: string;
+  page: string;
 }
 
+export interface ParamsSearch extends ParsedUrlQuery {
+  search: string;
+}

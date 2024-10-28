@@ -1,10 +1,16 @@
 "use client";
 
-import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
+import {
+  createTheme,
+  CssBaseline,
+  IconButton,
+  ThemeProvider,
+} from "@mui/material";
 import "./layoutApp.css";
 import logo from "../public/anonimoporfavor.png";
 import Image from "next/image";
 import Head from "next/head";
+import { Facebook, GitHub, Instagram } from "@mui/icons-material";
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -40,6 +46,25 @@ export default function RootLayout({
 
           {children}
         </ThemeProvider>
+
+        <footer>
+          <a href={process.env.FACEBOOK_LINK} target="_blank">
+            <IconButton disabled>
+              <Facebook />
+            </IconButton>
+          </a>
+
+          <a href={process.env.INSTAGRAM_LINK} target="_blank">
+            <IconButton disabled>
+              <Instagram />
+            </IconButton>
+          </a>
+          <a href={process.env.GITHUB_LINK} target="_blank">
+            <IconButton disabled>
+              <GitHub />
+            </IconButton>
+          </a>
+        </footer>
       </body>
     </html>
   );

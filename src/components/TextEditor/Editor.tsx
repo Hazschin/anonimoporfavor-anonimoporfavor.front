@@ -26,8 +26,12 @@ export default function Editor() {
     "bullet",
     "indent",
     "link",
-    "image",
-    "video",
+    "color",
+    "background",
+    "align",
+    "direction",
+    "script",
+    "formula",
   ];
 
   return (
