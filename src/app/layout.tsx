@@ -10,7 +10,7 @@ import "./layoutApp.css";
 import logo from "../public/anonimoporfavor.png";
 import Image from "next/image";
 import Head from "next/head";
-import { Facebook, GitHub, Instagram } from "@mui/icons-material";
+import { GitHub, Instagram, LinkedIn } from "@mui/icons-material";
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -50,7 +50,7 @@ export default function RootLayout({
         <footer>
           <a href={process.env.FACEBOOK_LINK} target="_blank">
             <IconButton disabled>
-              <Facebook />
+              <LinkedIn />
             </IconButton>
           </a>
 

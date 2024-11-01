@@ -1,3 +1,7 @@
+.quill .ql-snow {
+    border: none;
+}
+
 #editorContainer{
     background: #FEF4DB;
     width: 90%;

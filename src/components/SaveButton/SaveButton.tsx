@@ -10,7 +10,7 @@ export default function SaveButton() {
     const titleInput = document?.querySelector("#title") as HTMLInputElement;
     const authorInput = document?.querySelector("#author") as HTMLInputElement;
 
-    const note = document?.querySelector("div#editorContainer div.ql-editor")
+    const note = document?.querySelector("div#editorContainer div.ql-container")
       ?.firstElementChild?.innerHTML;
     const title = titleInput.value;
     const author = authorInput.value;
