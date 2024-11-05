@@ -9,5 +9,5 @@ export interface ParamsPages extends ParsedUrlQuery {
 }
 
 export interface ParamsSearch extends ParsedUrlQuery {
-  search: string;
+  search: string[];
 }

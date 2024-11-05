@@ -3,8 +3,10 @@ import { IconButton, InputBase } from "@mui/material";
 
 export default function SearchInput({
   onChange = () => {},
+  defaultValue = "",
 }: {
   onChange: () => void;
+  defaultValue: string;
 }) {
   const onEnter = (e: React.KeyboardEvent<HTMLElement>) => {
     if (e.key === "Enter") onChange();
@@ -18,6 +20,7 @@ export default function SearchInput({
         display: "flex",
         alignItems: "center",
         borderRadius: "25px",
+        border: "solid 1px rgba(255,255,255, 0.5)",
       }}
     >
       <InputBase
@@ -25,6 +28,7 @@ export default function SearchInput({
         placeholder="Buscar nota..."
         inputProps={{ "aria-label": "Buscar nota" }}
         fullWidth
+        defaultValue={defaultValue}
         onKeyDown={onEnter}
       />
       <IconButton

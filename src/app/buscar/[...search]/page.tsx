@@ -2,23 +2,21 @@
 
 import "./getNotes.css";
 import NoteOverview from "@/components/NoteOverview/NoteOverview";
-import SearchInput from "@/components/SearchInput/SearchInput";
-import { Add } from "@mui/icons-material";
-import { IconButton, Pagination } from "@mui/material";
+import { Pagination } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { ChangeEvent, useEffect, useState } from "react";
-import { NoteOverviewType } from "../../../types/Notes";
-import { searchAndCountNotes } from "../../../utils/fetching";
-import { ParamsPages } from "../../../types/Params";
+import { ParamsSearch } from "../../../../types/Params";
+import { NoteOverviewType } from "../../../../types/Notes";
+import { searchAndCountNotes } from "../../../../utils/fetching";
 
-export default function GetPages({ params }: { params: ParamsPages }) {
+export default function GetPages({ params }: { params: ParamsSearch }) {
   useEffect(() => {
     SearchAndCountNotes();
   }, []);
 
   const router = useRouter();
-  let searchParam = "";
-  let pageParam = parseInt(params.page);
+  let searchParam = decodeURIComponent(params.search[0]) || "";
+  let pageParam = parseInt(params.search[1]) || 1;
 
   const SearchAndCountNotes = async () => {
     const data = await searchAndCountNotes(searchParam, postPerPage, page); //"" devuelve todas las notes
@@ -27,12 +25,7 @@ export default function GetPages({ params }: { params: ParamsPages }) {
   };
 
   const rePaginate = (event: ChangeEvent<unknown>, newPage: number) => {
-    router.push(`/${newPage}`);
-  };
-
-  const searchInput = () => {
-    let search = document.querySelector("input")?.value;
-    router.push(`/buscar/${search}`);
+    router.push(`/buscar/${searchParam}/${newPage}`);
   };
 
   const [qNotes, setQNotes] = useState<number>(100);
@@ -42,26 +35,6 @@ export default function GetPages({ params }: { params: ParamsPages }) {
 
   return (
     <div>
-      <a href={"/createNote"}>
-        <IconButton
-          type="button"
-          sx={{ p: "10px" }}
-          aria-label="search"
-          style={{
-            position: "fixed",
-            top: "20px",
-            left: "10px",
-            background: "aliceblue",
-            zIndex: "1",
-            color: "#121212",
-            boxShadow: "0px 0px 15px 2px black",
-          }}
-        >
-          <Add />
-        </IconButton>
-      </a>
-
-      <SearchInput defaultValue={""} onChange={searchInput} />
       <div id="notes" style={{ padding: "0px 15px" }}>
         {notes.map((note, i) => {
           return (
@@ -79,7 +52,7 @@ export default function GetPages({ params }: { params: ParamsPages }) {
       <div style={{ display: "block", width: "fit-content", margin: "0 auto" }}>
         <Pagination
           count={Math.ceil(qNotes / postPerPage)}
-          page={parseInt(params.page)}
+          page={pageParam}
           color="primary"
           sx={{ padding: "1rem" }}
           onChange={rePaginate}

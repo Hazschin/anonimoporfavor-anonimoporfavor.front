@@ -1,3 +1,5 @@
+import { NoteOverviewType, SearchAndCountNotesType } from "../types/Notes";
+
 export const configfetch = {
   post: {
     method: "POST",
@@ -27,3 +29,37 @@ export async function fetchPostData<T>(
   const data: T = await res.json();
   return data;
 }
+
+export const getNotes = async (postPerPage: number, page: number) => {
+  return await fetchPostData<NoteOverviewType[]>(`/notes/getNotes`, {
+    postPerPage,
+    page,
+  });
+};
+
+export const searchNotes = async (
+  search: string,
+  postPerPage: number,
+  page: number
+) => {
+  return await fetchPostData<SearchAndCountNotesType>(`/notes/searchNotes`, {
+    search,
+    postPerPage,
+    page,
+  });
+};
+
+export const searchAndCountNotes = async (
+  search: string,
+  postPerPage: number,
+  page: number
+) => {
+  return await fetchPostData<SearchAndCountNotesType>(
+    `/notes/searchAndCountNotes`,
+    {
+      search,
+      postPerPage,
+      page,
+    }
+  );
+};
