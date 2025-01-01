@@ -1,0 +1,111 @@
+.quill .ql-snow {
+    border: none;
+}
+
+header {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    right: 0;
+    align-items: center;
+    z-index: 2;
+}
+
+#bgHeaderEditor {
+    background: #121212;
+    position:fixed;
+    top: 0px;
+    left: 0;
+    right: 0;
+    height: 80px;
+    z-index: 1;
+}
+
+#toolbar-container{
+    position:fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    padding: 0;
+}
+
+#toolbar{
+    border:none;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+#editorContainer{
+    background: #FEF4DB;
+    width: 90%;
+    min-height: 0vw;
+    margin: 0 auto;
+    border:none;
+    border-radius: 1em;
+    box-shadow: 0px 3px 10px 2px#F8A86A;
+    margin-top: 150px;
+    margin-bottom: 30px;
+}
+
+
+#editor {
+    border: none;
+}
+
+#editorContainer input{
+    border:none;
+    outline: none;
+    background: transparent;
+    
+}
+
+#editorContainer input#title{
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+    padding: 15px 0px 10px 0;
+    border-bottom: solid 2px #0000006f;
+    font-size: medium;
+    font-weight: bold;
+    color: #000000a1;
+}
+
+#editorContainer input#title:focus {
+    border-bottom: solid 2px #000000a1;
+}
+
+#editorContainer .author{
+    font-family: sans-serif;
+    display: flex;
+    justify-content: right;
+    font-size: small;
+    padding: 10px;
+    color: #000000a1;
+}
+
+#editorContainer .author input {
+    min-width: 150px;
+    padding-left: 10px;
+    padding-bottom: 0;
+    font-size: small;
+    color: #000000a1;
+}
+
+button.saveButton {
+    display: block;
+    margin: 0 auto;
+    background: #000;
+    /*background: #c76920;*/
+    /*background: #de6000;*/
+    padding: 15px 30px;
+    color: #ffffffce;
+    font-weight: bolder;
+}
+
+@media (max-width:700px) {
+    #editorContainer{
+        margin-top: 200px;
+    }
+}
